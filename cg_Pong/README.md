@@ -1,4 +1,4 @@
-# cd_Pong
+# cg_Pong
 
 Classic Pong, made using PyGame, Python3.
 
