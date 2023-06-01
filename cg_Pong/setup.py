@@ -17,8 +17,3 @@ screen = pg.display.set_mode((WIDTH, HEIGHT))
 # Used to adjust the frame rate
 clock = pg.time.Clock()
 FPS = 30
-
-z = pg.Rect(1, 1, 1, 1)
-x = pg.draw.rect(screen, GREEN, z)
-print(type(z))
-print(type(x))
