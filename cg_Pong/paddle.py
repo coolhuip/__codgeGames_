@@ -4,12 +4,22 @@ from setup import BLACK, WHITE, GREEN
 from setup import WIDTH, HEIGHT, FPS
 
 
-
 class Paddle:
     """
     Player class
+    ------------
+    NOTE: doc types assume that pygame has been imported as pg.
     """
-    def __init__(self, posx, posy, width, height, speed, color):
+    posx: int
+    posy: int
+    width: int
+    height: int
+    speed: int
+    color: tuple(int, int, int)
+    paddle_rect: pg.rect.Rect
+    paddle: pg.rect.Rect
+
+    def __init__(self, posx, posy, width, height, speed, color) -> None:
         """
         Takes the initial position, dimensions, speed, and color of the object.
         """
@@ -20,15 +30,15 @@ class Paddle:
         self.speed = speed
         self.color = color
         # Rect: used to control position & collision of object
-        self.rect_paddle = pg.Rect(posx, posy, width, height)
+        self.paddle_rect = pg.Rect(posx, posy, width, height)
         # Object that is blit on the screen
-        self.paddle = pg.draw.rect(screen, self.color, self.rect_paddle)
+        self.paddle = pg.draw.rect(screen, self.color, self.paddle_rect)
 
     def display(self):
         """
         Display the object on the screen.
         """
-        self.paddle = pg.draw.rect(screen, self.color, self.rect_paddle)
+        self.paddle = pg.draw.rect(screen, self.color, self.paddle_rect)
 
     def update(self, y_fac):
         """
@@ -43,4 +53,14 @@ class Paddle:
             self.posy = HEIGHT - self.height
         
         # Update rect w/ the new values
-        self.rect_paddle = (self)
+        self.paddle_rect = (self.posx, self.posy, self.width, self.height)
+
+    def display_score(self, text, score, x, y, color):
+        text = font20.render(text + str(score), True, color)
+        text_rect = text.get_rect()
+        text_rect.center = (x, y)
+
+        screen.blit(text, text_rect)
+
+    def get_rect(self):
+        return self.paddle_rect
