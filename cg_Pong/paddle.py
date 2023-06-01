@@ -1,3 +1,4 @@
+from typing import Any, Union, Callable
 from setup import pg
 
 from setup import font20, screen, clock
@@ -16,7 +17,13 @@ class Paddle:
     width: int
     height: int
     speed: int
-    color: tuple(int, int, int)
+    # color: tuple(int, int, int)
+    # TODO
+    # -> FOR SOME REASON... The above attribute declaration
+    #                       results in the following:
+    # -----------------------------------------------------
+    # Type Error: tuple expected at most 1 argument, got 3
+    # -----------------------------------------------------
     paddle_rect: pg.rect.Rect
     paddle: pg.rect.Rect
 
