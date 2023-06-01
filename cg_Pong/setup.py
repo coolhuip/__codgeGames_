@@ -1,5 +1,7 @@
 import pygame as pg
 
+pg.init()
+
 # Font that is used to render the text
 font20 = pg.font.Font('freesnsbold.ttf', 20)
 
