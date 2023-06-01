@@ -47,7 +47,8 @@ def main():
                     player1_y_fac = 0
         
         # Collision detection
-        for player in players_list            if pg.Rect.colliderect(ball.get_rect(), player.get_rect()):
+        for player in players_list:
+            if pg.Rect.colliderect(ball.getRect(), player.getect()):
                 ball.hit()
 
         # Updating the objects
