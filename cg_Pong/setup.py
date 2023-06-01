@@ -1,5 +1,6 @@
 import pygame as pg
 
+
 pg.init()
 
 # Font that is used to render the text
