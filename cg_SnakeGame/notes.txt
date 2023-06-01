@@ -1,0 +1,19 @@
+IMPORTS + FUNCTIONS used in this Snake Game project:
+
+
+import pygame as pg
+
+pg.init()
+pg.display.set_mode((int, int))
+pg.display.set_caption(str)
+pg.time.Clock()
+
+pg.font.SysFont(str, int) -> Font
+pg.render(str, bool, ColorValue) -> Surface
+Surface.get_rect() -> Rect
+Surface.blit(Surface, Rect) -> Rect
+
+
+import random as rand
+
+rand.randrange(int, int)
