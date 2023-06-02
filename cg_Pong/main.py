@@ -2,7 +2,8 @@ from setup import pg
 
 from setup import font20, screen, clock
 from setup import BLACK, WHITE, GREEN
-from setup import WIDTH, HEIGHT, FPS
+from setup import WIDTH, HEIGHT
+from setup import FPS
 
 from paddle import Paddle
 from ball import Ball
